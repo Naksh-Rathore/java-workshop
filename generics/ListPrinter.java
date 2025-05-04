@@ -1,22 +1,28 @@
 import java.util.List;
-import java.util.Arrays;
-public class ListPrinter {
 
+public class ListPrinter {
   private <T> void printList(List<T> collection){
     for(T item: collection){
-      System.out.printf("%s ", item);
+      System.out.print(item + " ");
     }
+
+    System.out.println();
   }
 
   public static void main(String[] args){
-    var integers = List.of(1,2,3,4,5);
-    var doubles = List.of(1.1,2.2,3.3,4.4,5.5);
-    var chars = List.of('J','O','S','D','E','M');
-    var printer = new ListPrinter();
+    List<Integer> integers = List.of(1,2,3,4,5);
+    List<Double> doubles = List.of(1.1,2.2,3.3,4.4,5.5);
+    List<Character> chars = List.of('J','O','S','D','E','M');
+
+    ListPrinter printer = new ListPrinter();
+    
+    System.out.print("Integers: ");
     printer.printList(integers);
-    System.out.println();
+
+    System.out.print("Doubles: ");
     printer.printList(doubles);
-    System.out.println();
+    
+    System.out.print("Characters: ");
     printer.printList(chars);
   }
 }
